@@ -1,50 +1,43 @@
+import { prependOnceListener } from "process"
+import { preprocessCSS } from "vite"
+
 /*import { useState, useEffect } from "react";
 import { Link } from "react-router";
 import { PokeAPI } from "./api";
 */
-
-interface Props {
-  id: number;
-  image: string;
-  name: string;
-  types: string[];
+type Props = {
+    id: number
+    image: string
+    name: string
+    types: string[]
 }
 
-export const Card: React.FC<Props> = (props) => (
-  <div className="bg-white border border-gray-300 rounded-lg shadow-md relative w-2xs flex items-center justify-center h-80">
-    <h4 className="text-xl text-gray-900 tracking-wide font-bold absolute left-4 top-2">
-      {props.name} -{" "}
-      <span className="text-gray-700 font-medium">{props.id}</span>
-    </h4>
 
-    <img
-      src={props.image}
-      alt={props.name}
-      className="w-36 h-36 object-contain"
-    />
-
-    <div className="text-sm text-gray-700 absolute right-2 bottom-2">
-      <div className="flex justify-center space-x-2">
-        {props.types.map((type) => (
-          <span
-            key={type}
-            className={`font-bold text-white px-3 py-1 rounded-md text-xs ${getTypeColor(type)}`}
-          >
-            {type}
-          </span>
-        ))}
-      </div>
+function Card(props: Props) {
+  return (
+    <div className="rounded-lg p-2 bg-white shadow">
+      <div className="content-between gap-4"><center>{props.id}</center></div>
+      <center><div className="border-black-100>{props.name}</div></center>
+      <img src={props.image} />
+      <center><div className="bg-blue-200">{props.types.map((type) => <span key={type}>{type}</span>)}</div></center>
     </div>
-  </div>
-);
-export function Root() {
-  return <Card
-    id={0}
-    image="https://placeholdit.com/400/dddddd/999999"
-    name="Pikachu"
-    types={["grass"]}
-    />
+  )
 }
+
+
+export function Root() {
+  return (
+    <div className="bg-white w-2xs rounded-lg ">
+      <Card
+        id={0}
+        name="Magikarp"
+        image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/129.png"
+        types={["water"]}
+      />
+    </div>
+  )
+    }
+
 function getTypeColor(type: string): string {
   return typeColors[type];
 }
