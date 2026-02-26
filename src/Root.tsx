@@ -48,7 +48,7 @@ export function Root() {
   return typeColors[type];
 }*/
 
-const typeColors: { [key: string]: string } = {
+/*const typeColors: { [key: string]: string } = {
   fire: "bg-red-500",
   water: "bg-blue-500",
   grass: "bg-green-500",
@@ -68,7 +68,7 @@ const typeColors: { [key: string]: string } = {
   ghost: "bg-indigo-700",
   steel: "bg-gray-500",
 };
-
+*/
 /*
 interface PokemonCard {
   id: number;
