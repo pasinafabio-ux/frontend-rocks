@@ -1,5 +1,5 @@
-import { prependOnceListener } from "process"
-import { preprocessCSS } from "vite"
+/*import { prependOnceListener } from "process"
+import { preprocessCSS } from "vite"*/
 
 /*import { useState, useEffect } from "react";
 import { Link } from "react-router";
@@ -15,10 +15,10 @@ type Props = {
 
 function Card(props: Props) {
   return (
-    <div className="rounded-lg p-2 bg-white shadow text-center">
+    <div className="rounded-lg p-2 bg-white shadow text-center border-2 border-blue-500">
       <div className="flex justify-center items-center mb-1 space-x-2">
         <div className="font-bold">{props.id}</div>
-        <div className="border-black-100">{props.name}</div>
+        <div className="border-black-100 bg-gray-200 px-1 rounded">{props.name}</div>
       </div>
       <img className="mx-auto" src={props.image} />
       <div className="bg-blue-200 mx-auto mt-1 inline-block">
@@ -44,9 +44,9 @@ export function Root() {
   )
     }
 
-function getTypeColor(type: string): string {
+/*function getTypeColor(type: string): string {
   return typeColors[type];
-}
+}*/
 
 const typeColors: { [key: string]: string } = {
   fire: "bg-red-500",
