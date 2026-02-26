@@ -15,11 +15,17 @@ type Props = {
 
 function Card(props: Props) {
   return (
-    <div className="rounded-lg p-2 bg-white shadow">
-      <div className="content-between gap-4"><center>{props.id}</center></div>
-      <center><div className="border-black-100>{props.name}</div></center>
-      <img src={props.image} />
-      <center><div className="bg-blue-200">{props.types.map((type) => <span key={type}>{type}</span>)}</div></center>
+    <div className="rounded-lg p-2 bg-white shadow text-center">
+      <div className="flex justify-center items-center mb-1 space-x-2">
+        <div className="font-bold">{props.id}</div>
+        <div className="border-black-100">{props.name}</div>
+      </div>
+      <img className="mx-auto" src={props.image} />
+      <div className="bg-blue-200 mx-auto mt-1 inline-block">
+        {props.types.map((type) => (
+          <span key={type}>{type}</span>
+        ))}
+      </div>
     </div>
   )
 }
